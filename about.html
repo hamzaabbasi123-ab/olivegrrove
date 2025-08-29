@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6">
+        <h2>About Olive Grove</h2>
+        <p class="lead">We believe in products that are good for you and good for the planet.</p>
+        <p>Founded in 2015, Olive Grove began as a small family operation dedicated to creating high-quality, natural products. Today, we've grown into a community of artisans and craftspeople who share our values of sustainability and quality.</p>
+        <p>All our products are sourced from sustainable materials and crafted with care. We work directly with artisans to ensure fair wages and ethical working conditions.</p>
+        <p>When you shop with us, you're not just buying a product - you're supporting a tradition of craftsmanship and a commitment to a more sustainable world.</p>
+    </div>
+    <div class="col-lg-6">
+        <img src="{{ url_for('static', filename='images/aboutus.png') }}" class="img-fluid rounded shadow" alt="About Us" onerror="this.src='https://images.unsplash.com/photo-1604719312566-8912e2217c26?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80'">
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 text-center">
+        <i class="bi bi-recycle display-4"></i>
+        <h4>Sustainable</h4>
+        <p>We use eco-friendly materials and processes</p>
+    </div>
+    <div class="col-md-4 text-center">
+        <i class="bi bi-people-fill display-4"></i>
+        <h4>Ethical</h4>
+        <p>Fair wages and working conditions for all</p>
+    </div>
+    <div class="col-md-4 text-center">
+        <i class="bi bi-award-fill display-4"></i>
+        <h4>Quality</h4>
+        <p>Products made to last and be enjoyed</p>
+    </div>
+</div>
+{% endblock %}

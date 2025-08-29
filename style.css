@@ -1,0 +1,206 @@
+:root {
+    --olive: #556B2F;
+    --light-olive: #6B8E23;
+    --light-brown: #D2B48C;
+    --dark-brown: #8B4513;
+}
+
+body {
+    background-color: #F5F5DC;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.logo-dance img {
+    height: 180px;
+    width: auto;
+    margin-left: 850px;
+    animation: dance 2s ease-in-out infinite;
+}
+
+/* Keyframes for up-down floating */
+@keyframes dance {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+.navbar {
+    background-color: var(--olive) !important;
+    justify-content: flex-end; /* This moves the navbar to the right */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: auto; /* This keeps the brand on the left */
+}
+.navbar-nav.me-auto {
+    margin-left: 350px; /* adjust how far right you want */
+}
+
+
+
+.navbar .nav-link {
+    color: white !important;       /* default color for links */
+    position: relative;            /* needed for underline effect */
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+     margin-left: 20px; 
+    
+}
+
+.navbar .nav-link:hover {
+    color: var(--light-brown) !important; /* changes text color on hover */
+}
+
+/* Brown underline effect */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--dark-brown);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%; /* expands underline on hover */
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--dark-brown);
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: var(--light-olive);
+    border-color: var(--light-olive);
+}
+
+.btn-primary:hover {
+    background-color: var(--olive);
+    border-color: var(--olive);
+}
+
+.btn-outline-primary {
+    color: var(--light-olive);
+    border-color: var(--light-olive);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--light-olive);
+    border-color: var(--light-olive);
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--olive);
+    color: white;
+    margin-top: auto;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(85, 107, 47, 0.1), rgba(85, 107, 47, 0.1)), 
+                url('https://images.unsplash.com/photo-1604719312566-8912e2217c26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=400&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px rgba(113, 94, 2, 0.7);
+}
+
+i.bi {
+    color: var(--light-olive);
+}
+.cart-icon i {
+    color: var(--dark-brown) !important; /* cart icon brown */
+    transition: color 0.3s ease;
+    font-size: 1.3rem;
+}
+
+
+.cart-icon:hover i {
+    color: var(--light-brown) !important; /* lighter brown on hover */
+}
+
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+    background-color: var(--light-olive);
+    color: white;
+}
+
+.badge {
+    font-size: 0.7rem;
+}
+/* ... (previous styles remain the same) */
+
+.cart-product-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.order-product-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

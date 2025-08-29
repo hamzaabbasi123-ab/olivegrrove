@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Your Orders</h2>
+
+{% if orders %}
+{% for order in orders %}
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between">
+        <div>
+            <strong>Order #{{ order.id }}</strong>
+            <span class="badge bg-info ms-2">{{ order.status }}</span>
+        </div>
+        <div>{{ order.order_date.strftime('%B %d, %Y %H:%M') }}</div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in order.items %}
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ url_for('static', filename='images/' + item.product.image) }}" alt="{{ item.product.name }}" class="order-product-img me-2" onerror="this.src='https://images.unsplash.com/photo-1604719312566-8912e2217c26?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80'">
+                                {{ item.product.name }}
+                            </div>
+                        </td>
+                        <td>${{ "%.2f"|format(item.price) }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ "%.2f"|format(item.price * item.quantity) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>Order Total:</strong></td>
+                        <td><strong>${{ "%.2f"|format(order.total_amount) }}</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="text-center py-5">
+    <i class="bi bi-box-seam display-1"></i>
+    <h3 class="mt-3">No orders yet</h3>
+    <p>Start shopping to see your orders here</p>
+    <a href="{{ url_for('store') }}" class="btn btn-primary">Go Shopping</a>
+</div>
+{% endif %}
+{% endblock %}
